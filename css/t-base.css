@@ -1,0 +1,36 @@
+* {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  border: none; }
+
+body {
+  width: 996px;
+  margin: 0 auto; }
+  body h1 {
+    position: absolute;
+    top: -2000px;
+    color: #fff; }
+  body header {
+    overflow: auto; }
+    body header #index-img {
+      float: left; }
+  body div.t-main-container {
+    overflow: auto; }
+    body div.t-main-container .main-left {
+      float: left; }
+    body div.t-main-container .main-right {
+      float: right; }
+  body footer {
+    text-align: center;
+    line-height: 35px; }
+    body footer .t-f-bottom {
+      line-height: 30px; }
+  body .bg-div .bg-left {
+    float: left;
+    background-image: url("http://china-us.com/images/structure/seasonal-background_8.png"); }
+  body .bg-div .bg-right {
+    float: right;
+    background-image: url("http://china-us.com/images/structure/seasonal-background_8.png"); }
+
+/*# sourceMappingURL=t-base.css.map */
