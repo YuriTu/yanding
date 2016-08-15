@@ -1,0 +1,213 @@
+//reset
+$BO:1px solid #000000;
+*{
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+a{
+  text-decoration: none;
+}
+@mixin i-head($a){
+  width: 100%;
+  position: absolute;
+  opacity: 0.6;
+  text-align: center;
+  line-height: $a;
+  background-color: #fff;
+  border: $BO;
+}
+
+@mixin i-footer($hi){
+  position: relative;
+  padding: 5px;
+  border: $BO;
+  //height: 50%;
+  height: $hi;
+  a{
+    color: #6ea2e0;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    text-decoration: none;
+    &:active{
+      color: #7ab4fa;
+    }
+  }
+}
+
+@mixin i-body($wi,$hi){
+  width: 100%;
+  height: $hi;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+}
+
+body{
+  h1{
+    position: absolute;
+    top:-2000px;
+    color: #fff;
+  }
+  header{
+    border-top: 5px solid #910029;
+    background-color: #fff;
+    background-image: url('http://china-us.com/images/structure/logo_bg.png');
+    background-repeat: repeat-x;
+    background-position: 0px 0px;
+    height: 90px;
+    &>div{
+      //height: 75px;
+      width: 996px;
+      margin:0 auto;
+
+      .h-ce{
+        display: inline-block;
+        height: 75px;
+        margin-left: 50px;
+        .ce-mi{
+          height: 35px;
+          margin-top: 5px;
+          img{
+            margin-bottom: 5px;
+          }
+        }
+      }
+      #index-img{
+        margin-top: 5px;
+        height: 80px;
+      }
+      .index-weixin{
+        width: 70px;
+        height: 70px;
+        float: right;
+        margin-top: 10px;
+      }
+    }
+
+  }
+  div.t-main-container{
+    @include clearfix;
+    width: 996px;
+    margin:0 auto;
+    .main-left{
+      width: 50%;
+      float: left;
+      .item{
+        position: relative;
+        .i-head{
+          @include i-head(80px)
+        }
+        .i-body{
+          @include i-body(498px,500px)
+        }
+        .i-footer{
+          //112
+          @include i-footer(100px)
+        }
+      }
+    }
+    .main-right{
+      width: 50%;
+      float: right;
+      .item-first{
+        @include clearfix;
+        .i-head{
+          @include i-head(40px);
+          width: 495px;
+        }
+        .i-body{
+          //float: right;
+          @include i-body(249px,250px)
+        }
+        .i-footer{
+          //float: left;
+          @include i-footer(50px)
+        }
+      }
+      .item-second{
+        width: 50%;
+        float: left;
+        @include clearfix;
+        .i-head{
+          //float: left;
+          @include i-head(40px);
+
+          width:247.5px;
+        }
+        .i-body{
+          //float: right;
+          @include i-body(249px,238px)
+        }
+        .i-footer{
+          //float: left;
+          @include i-footer(50px)
+        }
+      }
+      .item-third{
+        width: 50%;
+        float: right;
+
+        @include clearfix;
+        .i-head{
+          //float: left;
+          @include i-head(40px);
+
+          width:247.5px;
+        }
+        .i-body{
+          //float: right;
+          @include i-body(249px,238px)
+        }
+        .i-footer{
+          //float: left;
+          @include i-footer(50px)
+        }
+      }
+    }
+  }
+  footer{
+    text-align: center;
+    line-height: 35px;
+    &>p{
+      font-size: 18px;
+    }
+
+    .t-f-bottom{
+      line-height: 30px;
+      font-size: 12px;
+
+    }
+    background: #222;
+    color: #fff;
+    a{
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+  .bg-div{
+
+    .bg-left{
+      float: left;
+      background-image: url("http://china-us.com/images/structure/seasonal-background_8.png");
+    }
+    .bg-right{
+      float: right;
+      background-image: url("http://china-us.com/images/structure/seasonal-background_8.png");
+    }
+  }
+}
+
+
