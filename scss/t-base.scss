@@ -5,6 +5,7 @@ $BO:1px solid #000000;
   padding: 0;
   margin: 0;
   border: none;
+
 }
 a{
   text-decoration: none;
@@ -17,13 +18,14 @@ a{
   line-height: $a;
   background-color: #fff;
   border: $BO;
+  font-size: 20px;
 }
 
 @mixin i-footer($hi){
   position: relative;
   padding: 5px;
   border: $BO;
-  //height: 50%;
+  background-color: #fff;
   height: $hi;
   a{
     color: #6ea2e0;
@@ -34,6 +36,11 @@ a{
     &:active{
       color: #7ab4fa;
     }
+  }
+  p{
+
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -56,6 +63,8 @@ a{
 }
 
 body{
+  background:url("http://i2.buimg.com/508876/f42af285c56008ce.jpg");
+  font-family: "Microsoft YaHei","NSimSun","Microsoft Sans Serif","Microsoft YaHei","","san-serif";
   h1{
     position: absolute;
     top:-2000px;
@@ -69,7 +78,6 @@ body{
     background-position: 0px 0px;
     height: 90px;
     &>div{
-      //height: 75px;
       width: 996px;
       margin:0 auto;
 
@@ -82,12 +90,15 @@ body{
           margin-top: 5px;
           img{
             margin-bottom: 5px;
+            vertical-align: baseline;
+
           }
         }
       }
       #index-img{
         margin-top: 5px;
         height: 80px;
+        vertical-align: baseline;
       }
       .index-weixin{
         width: 70px;
@@ -102,16 +113,19 @@ body{
     @include clearfix;
     width: 996px;
     margin:0 auto;
+    z-index: 5;
+    //margin-top: 95px;
     .main-left{
       width: 50%;
       float: left;
+      z-index: 3;
       .item{
         position: relative;
         .i-head{
-          @include i-head(80px)
+          @include i-head(80px);
         }
         .i-body{
-          @include i-body(498px,500px)
+          @include i-body(498px,550px)
         }
         .i-footer{
           //112
@@ -120,9 +134,12 @@ body{
       }
     }
     .main-right{
+      z-index: 2;
       width: 50%;
       float: right;
       .item-first{
+        position: relative;
+        z-index: 2;
         @include clearfix;
         .i-head{
           @include i-head(40px);
@@ -134,12 +151,14 @@ body{
         }
         .i-footer{
           //float: left;
-          @include i-footer(50px)
+          @include i-footer(75px)
         }
       }
       .item-second{
+        z-index: 1;
         width: 50%;
         float: left;
+        position: relative;
         @include clearfix;
         .i-head{
           //float: left;
@@ -153,13 +172,14 @@ body{
         }
         .i-footer{
           //float: left;
-          @include i-footer(50px)
+          @include i-footer(75px)
         }
       }
       .item-third{
         width: 50%;
         float: right;
-
+        z-index: 1;
+        position: relative;
         @include clearfix;
         .i-head{
           //float: left;
@@ -173,7 +193,7 @@ body{
         }
         .i-footer{
           //float: left;
-          @include i-footer(50px)
+          @include i-footer(75px)
         }
       }
     }
@@ -197,17 +217,7 @@ body{
       font-size: 18px;
     }
   }
-  .bg-div{
 
-    .bg-left{
-      float: left;
-      background-image: url("http://china-us.com/images/structure/seasonal-background_8.png");
-    }
-    .bg-right{
-      float: right;
-      background-image: url("http://china-us.com/images/structure/seasonal-background_8.png");
-    }
-  }
 }
 
 

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>燕定美中专题页后台管理系统</title>-->
+    <link rel="shortcut icon" href="http://china-us.com/images/base/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="./css/t-base.css">-->
+</head>
+<body>
+
+<div class="t-main-container container-fluid">
+    <!--498*612-->
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">燕定美中专题页后台管理系统</h3>
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                <div class="main-left col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="presentation" class="active"><a href="#rule">总则</a></li>
+                        <li role="presentation"><a href="#indexPage">修改专题页首页</a></li>
+                        <li role="presentation"><a href="#ditailPage">修改详情页</a></li>
+                    </ul>
+                </div>
+                <!--498*306-->
+                <div class="main-right col-md-9">
+                    <div id="rule" class="panel panel-default">
+                        <div class="panel-heading">
+                            内容修改规则
+                        </div>
+                        <div class="panel-body">
+                            <h4>首页</h4>
+                            1.首页分为4个模块,每个模块包含上方的标题,下方引语,主体图片<br>
+                            2.首页可修改的范围为:1.每个模块中的图片、标题、下方的引语 <br>
+                            3.图片只能使用外联链接,宽高固定
+                            <h4>详情页</h4>
+                            1.包含5个模块,顶部banner图像,引导标题,3个正文组件,每个组件包括一个标题以及正文内容 <br>
+                            2.可修改范围为,顶部banner的图片 <br>
+                            3.4个标题 <br>
+                            4.对应正文,可使用html代码,理论上可以插入任何内容<br>
+                            5.页面代号 1为首页左侧点击后跳转的子页面,2为右侧上3右侧下左4右侧下右
+                            <h4>PS:</h4>
+                            修改内容必须输入安全口令,否则不可修改,安全口令请联系上级主管。
+                        </div>
+                    </div>
+                    <div id="indexPage" class="panel panel-default">
+                        <div class="panel-heading">
+                            修改专题页首页
+                        </div>
+                        <div class="panel-body">
+                            <form id="indexForm">
+                                <div class="form-group">
+                                    <label for="safe-index">口令</label>
+                                    <input type="text" class="form-control" id="safe-index" placeholder="口令">
+                                </div>
+                                <h4>左侧模块</h4>
+                                <div class="form-group">
+                                    <label for="left-h1">标题</label>
+                                    <input type="text" class="form-control" id="left-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="left-pic">图片</label>
+                                    <input type="text" class="form-control" id="left-pic" placeholder="仅支持外链">
+                                </div>
+                                <div class="form-group">
+                                    <label for="left-p">正文</label>
+                                    <input type="text" class="form-control" id="left-p" placeholder="正文">
+                                </div>
+                                <h4>右侧模块 - 右侧主模块</h4>
+                                <div class="form-group">
+                                    <label for="right1-h1">标题</label>
+                                    <input type="text" class="form-control" id="right1-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right1-pic">图片</label>
+                                    <input type="text" class="form-control" id="right1-pic" placeholder="仅支持外链">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right1-p">正文</label>
+                                    <input type="text" class="form-control" id="right1-p" placeholder="正文">
+                                </div>
+                                <h4>右侧模块 - 右侧下左模块</h4>
+                                <div class="form-group">
+                                    <label for="right2-h1">标题</label>
+                                    <input type="text" class="form-control" id="right2-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right2-pic">图片</label>
+                                    <input type="text" class="form-control" id="right2-pic" placeholder="仅支持外链">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right2-p">正文</label>
+                                    <input type="text" class="form-control" id="right2-p" placeholder="正文">
+                                </div>
+                                <h4>右侧模块 - 右侧下右模块</h4>
+                                <div class="form-group">
+                                    <label for="right3-h1">标题</label>
+                                    <input type="text" class="form-control" id="right3-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right3-pic">图片</label>
+                                    <input type="text" class="form-control" id="right3-pic" placeholder="仅支持外链">
+                                </div>
+                                <div class="form-group">
+                                    <label for="right3-p">正文</label>
+                                    <input type="text" class="form-control" id="right3-p" placeholder="正文">
+                                </div>
+                                <button class="btn btn-default" id="indexSubmit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="detailPage" class="panel panel-default">
+                        <div class="panel-heading">
+                            修改详情页
+                        </div>
+                        <div class="panel-body">
+                            <form id="detailForm">
+                                <div class="form-group">
+                                    <label for="safe-ditail">口令</label>
+                                    <input type="text" class="form-control" id="safe-ditail" placeholder="口令">
+                                </div>
+                                <div class="form-group">
+                                    <label for="detail-index">修改哪个页面</label>
+                                    <input type="text" class="form-control" id="detail-index" placeholder="请输入页面代号,详情请看 规则-详情页-第5条">
+                                </div>
+                                <h4>标题模块</h4>
+                                <div class="form-group">
+                                    <label for="de-h1">主标题</label>
+                                    <input type="text" class="form-control" id="de-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="de-banner">图片</label>
+                                    <input type="text" class="form-control" id="de-banner" placeholder="仅支持外链">
+                                </div>
+
+                                <h4>文章模块1</h4>
+                                <div class="form-group">
+                                    <label for="de1-h1">标题</label>
+                                    <input type="text" class="form-control" id="de1-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="de1-p">正文</label>
+                                    <input type="text" class="form-control" id="de1-p" placeholder="正文">
+                                </div>
+                                <h4>文章模块2</h4>
+                                <div class="form-group">
+                                    <label for="de2-h1">标题</label>
+                                    <input type="text" class="form-control" id="de2-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="de2-p">正文</label>
+                                    <input type="text" class="form-control" id="de2-p" placeholder="正文">
+                                </div>
+                                <h4>文章模块3</h4>
+                                <div class="form-group">
+                                    <label for="de3-h1">标题</label>
+                                    <input type="text" class="form-control" id="de3-h1" placeholder="标题">
+                                </div>
+                                <div class="form-group">
+                                    <label for="de3-p">正文</label>
+                                    <input type="text" class="form-control" id="de3-p" placeholder="正文">
+                                </div>
+                                <button class="btn btn-default" id="detailSubmit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/t-backend.js"></script>
+</body>
+</html>
