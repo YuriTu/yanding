@@ -65,6 +65,15 @@ jQuery(document).ready(function($) {
                 $("#p3").html(data.p3);
                 $("#p4").html(data.p4);
                 $("#banner").attr("src",data.banner);
+                if(data.h3 === ""){
+                    $("#panel3").hide()
+                }
+                if(data.h2 === ""){
+                    $("#panel2").hide()
+                }
+                if(data.h1 === ""){
+                    $("#panel1").hide()
+                }
             })
         },
     }
