@@ -1,14 +1,15 @@
 jQuery(document).ready(function($) {
 
-    // var param = {
-    //     safe:"wangyifan",
-    //     pageCode:0,
-    // };
+    var param = {
+        safe:"wangyifan",
+        pageCode:0,
+    };
     var action = {
 
         willMount(){
             var pathname = window.location.pathname
             param.pageCode = pathname.substr(pathname.indexOf("index=")+5,1);
+            param.safe = param.safe + pageCode
         },
         getData(){
             $.ajax({

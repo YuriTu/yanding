@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
                 dataType : "JSON",
                 cache    : false,
                 data:"",
+                crossDomain:true,
                 success:function (data) {
                     console.log(data)
                     alert(data)
@@ -50,8 +51,8 @@ jQuery(document).ready(function($) {
 
 	var init = {
         init(){
-            // action.willMount();
-            action.mountTest();
+            action.willMount();
+            // action.mountTest();
             action.toggleHead()
         }
     }

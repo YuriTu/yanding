@@ -1,0 +1,28 @@
+{
+  "name": "yanding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriTu/yanding.git"
+  },
+  "author": "yuri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuriTu/yanding/issues"
+  },
+  "homepage": "https://github.com/YuriTu/yanding#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.0"
+  }
+}
