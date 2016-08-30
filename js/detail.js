@@ -7,9 +7,10 @@ jQuery(document).ready(function($) {
     var action = {
 
         willMount(){
-            var pathname = window.location.pathname
-            param.pageCode = pathname.substr(pathname.indexOf("index=")+5,1);
-            param.safe = param.safe + pageCode
+            var pathname = window.location.search
+            param.pageCode = pathname.substr(pathname.indexOf("index=")+6,1);
+
+            param.safe = param.safe + param.pageCode
         },
         getData(){
             $.ajax({
@@ -19,60 +20,21 @@ jQuery(document).ready(function($) {
                 data:param,
             }).then(function (rs) {
                 let data = rs[0];
-                $("#h1").text(data.h1);
-                $("#h2").text(data.h2);
-                $("#h3").text(data.h3);
-                $("#h4").text(data.h4);
-                $("#p1").html(data.p1);
-                $("#p2").html(data.p2);
-                $("#p3").html(data.p3);
-                $("#p4").html(data.p4);
+                $("#h1").html(data.h1) ;
+                $("#h2").html(data.h2) ;
+                $("#h3").html(data.h3) ;
+                $("#h4").html(data.h4) ;
+                $("#p1").html(data.p1 );
+                $("#p2").html(data.p2 );
+                $("#p3").html(data.p3 );
                 $("#banner").attr("src",data.banner);
-            })
-        },
-        // mountTest(){
-        //     $.ajax({
-        //         url:"../json/detailPage.json",
-        //         type:"get",
-        //         dataType:"JSON",
-        //         data:"",
-        //     }).then(function (rs) {
-        //         let data = rs[0];
-        //         $("#h1").text(data.h1);
-        //         $("#h2").text(data.h2);
-        //         $("#h3").text(data.h3);
-        //         $("#h4").text(data.h4);
-        //         $("#p1").html(data.p1);
-        //         $("#p2").html(data.p2);
-        //         $("#p3").html(data.p3);
-        //         $("#p4").html(data.p4);
-        //         $("#banner").attr("src",data.banner);
-        //     })
-        // },
-        mountTest(){
-            $.ajax({
-                url:"../json/indexPage.json",
-                type:"get",
-                dataType:"JSON",
-                data:"",
-            }).then(function (rs) {
-                let data = rs[0];
-                $("#h1").text(data.h1);
-                $("#h2").text(data.h2);
-                $("#h3").text(data.h3);
-                $("#h4").text(data.h4);
-                $("#p1").html(data.p1);
-                $("#p2").html(data.p2);
-                $("#p3").html(data.p3);
-                $("#p4").html(data.p4);
-                $("#banner").attr("src",data.banner);
-                if(data.h3 === ""){
+                if(data.h3 === "null"){
                     $("#panel3").hide()
                 }
-                if(data.h2 === ""){
+                if(data.h2 === "null"){
                     $("#panel2").hide()
                 }
-                if(data.h1 === ""){
+                if(data.h1 === "null"){
                     $("#panel1").hide()
                 }
             })
@@ -81,10 +43,8 @@ jQuery(document).ready(function($) {
 
     var init = {
         init(){
-            // action.willMount();
-            action.mountTest();
-            // action.getData();
-            // action.toggleHead()
+            action.willMount();
+            action.getData();
         }
     }
     init.init()

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>燕定美中专题页后台管理系统</title>
+    <!--<title>燕定美中专题页后台管理系统</title>-->
     <link rel="shortcut icon" href="http://china-us.com/images/base/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="./css/t-base.css">-->
@@ -32,17 +32,23 @@
                         </div>
                         <div class="panel-body">
                             <h4>首页</h4>
-                            1.首页分为4个模块,每个模块包含上方的标题,下方引语,主体图片<br>
-                            2.首页可修改的范围为:1.每个模块中的图片、标题、下方的引语 <br>
+                            1.首页分为4个模块,每个模块包含上方的标题,下方引语,主体图片</br>
+                            2.首页可修改的范围为:1.每个模块中的图片、标题、下方的引语 </br>
                             3.图片只能使用外联链接,宽高固定
                             <h4>详情页</h4>
                             1.包含5个模块,顶部banner图像,引导标题,3个正文组件,每个组件包括一个标题以及正文内容 <br>
                             2.可修改范围为,顶部banner的图片 <br>
                             3.4个标题 <br>
                             4.对应正文,可使用html代码,理论上可以插入任何内容<br>
-                            5.页面代号 1为首页左侧点击后跳转的子页面,2为右侧上3右侧下左4右侧下右
+                            5.页面代号 1为首页左侧点击后跳转的子页面,2为右侧上3右侧下左4右侧下右<br>
+                            6.如果一个页面只需要1个或2个模块,可在不需要的模块的标题输入  null ,该模块即被隐藏,即使该模块有正文,也会被隐藏
+                            <h4>插入图片与换行</h4>
+                            <pre>在正文中换行 输入:   xxxxxx &lt;/br&gt;xxxxx</pre>
+                            <pre>在正文中插入图片 输入:   xxxxxx &lt;img src='图片地址.jpg'/&gt;xxxxx</pre>
                             <h4>PS:</h4>
-                            修改内容必须输入安全口令,否则不可修改,安全口令请联系上级主管。
+                            修改内容必须输入安全口令,否则不可修改,安全口令请联系上级主管。<br/>
+                            所有内容修改组件,不包含富文本编辑器,对样式有需求请使用html代码完成,已包含bootstrap类库<br>
+                            <h4>所有输入内容不得使用<strong>双引号</strong>,会造成页面无法读取</h4>
                         </div>
                     </div>
                     <div id="indexPage" class="panel panel-default">
@@ -66,7 +72,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="left-p">正文</label>
-                                    <input type="text" class="form-control" id="left-p" placeholder="正文">
+                                    <textarea class="form-control"id="left-p" placeholder="正文" name="left-p"  cols="30" rows="5"></textarea>
                                 </div>
                                 <h4>右侧模块 - 右侧主模块</h4>
                                 <div class="form-group">
@@ -79,7 +85,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="right1-p">正文</label>
-                                    <input type="text" class="form-control" id="right1-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="right1-p" placeholder="正文"cols="30" rows="5"></textarea>
                                 </div>
                                 <h4>右侧模块 - 右侧下左模块</h4>
                                 <div class="form-group">
@@ -92,7 +98,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="right2-p">正文</label>
-                                    <input type="text" class="form-control" id="right2-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="right2-p" placeholder="正文" cols="30" rows="5"></textarea>
                                 </div>
                                 <h4>右侧模块 - 右侧下右模块</h4>
                                 <div class="form-group">
@@ -105,7 +111,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="right3-p">正文</label>
-                                    <input type="text" class="form-control" id="right3-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="right3-p" placeholder="正文" cols="30" rows="5"></textarea>
                                 </div>
                                 <button class="btn btn-default" id="indexSubmit">Submit</button>
                             </form>
@@ -128,7 +134,7 @@
                                 <h4>标题模块</h4>
                                 <div class="form-group">
                                     <label for="de-h1">主标题</label>
-                                    <input type="text" class="form-control" id="de-h1" placeholder="标题">
+                                    <input type="text" class="form-control" id="de-h1" placeholder="标题" cols="30" rows="5">
                                 </div>
                                 <div class="form-group">
                                     <label for="de-banner">图片</label>
@@ -142,7 +148,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="de1-p">正文</label>
-                                    <input type="text" class="form-control" id="de1-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="de1-p" placeholder="正文" cols="30" rows="5"></textarea>
                                 </div>
                                 <h4>文章模块2</h4>
                                 <div class="form-group">
@@ -151,7 +157,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="de2-p">正文</label>
-                                    <input type="text" class="form-control" id="de2-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="de2-p" placeholder="正文" cols="30" rows="5"></textarea>
                                 </div>
                                 <h4>文章模块3</h4>
                                 <div class="form-group">
@@ -160,7 +166,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="de3-p">正文</label>
-                                    <input type="text" class="form-control" id="de3-p" placeholder="正文">
+                                    <textarea type="text" class="form-control" id="de3-p" placeholder="正文" cols="30" rows="5"></textarea>
                                 </div>
                                 <button class="btn btn-default" id="detailSubmit">Submit</button>
                             </form>

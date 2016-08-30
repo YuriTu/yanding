@@ -57,6 +57,7 @@ jQuery(document).ready(function($) {
                     type:"POST",
                     dataType:"JSON",
                     data:dataForIndex,
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 }).then(function (rs) {
                     alert(rs.mes)
                 })
@@ -70,11 +71,11 @@ jQuery(document).ready(function($) {
                 dataForDetail = {
                     safe:dataDetail[0].value,
                     pageCode:dataDetail[1].value,
-                    banner:dataDetail[2].value,
+                    banner:dataDetail[3].value,
                     h1:dataDetail[4].value,
                     h2:dataDetail[6].value,
                     h3:dataDetail[8].value,
-                    h4:dataDetail[3].value,
+                    h4:dataDetail[2].value,
                     p1:dataDetail[5].value,
                     p2:dataDetail[7].value,
                     p3:dataDetail[9].value,
@@ -84,6 +85,7 @@ jQuery(document).ready(function($) {
                     type:"POST",
                     dataType:"JSON",
                     data:dataForDetail,
+                    contentType: "application/x-www-form-urlencoded; charset=utf-8",
                 }).then(function (rs) {
                     alert(rs.mes)
                 })
