@@ -64,11 +64,7 @@ body {
     body footer a {
       color: #fff;
       font-size: 18px; }
-  body .bg-div .bg-left {
-    float: left;
-    background-image: url("http://china-us.com/images/structure/seasonal-background_8.png"); }
-  body .bg-div .bg-right {
-    float: right;
-    background-image: url("http://china-us.com/images/structure/seasonal-background_8.png"); }
+  body div.panel-body div {
+    font-size: 14px; }
 
 /*# sourceMappingURL=box.css.map */

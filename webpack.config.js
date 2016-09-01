@@ -14,18 +14,28 @@ var entries = {
 module.exports = {
     entry : entries,
     output : {//输出配置
-        filename : './js/[name].bundle.js',
-        // path : path.join(__dirname,'/dist')
+        filename : './js/dist/[name].bundle.js',
     },
     module:{//加载器配置
         loaders : [
             {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
             {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {
+                test    : /\.js[x]?$/,
+                loader  : "babel-loader?presets[]=es2015"
+            }
         ]
     },
     plugins: [
-        // new webpack.HotModuleReplacementPlugin()
-        new DashboardPlugin({ port:9188})
+        new DashboardPlugin({ port:9188}),
+        // 压缩js的plugins
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap : false,
+            mangle    : false,
+            compress  : {
+                warnings: false
+            }
+        }),
     ]
 };
 
